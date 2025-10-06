@@ -8,8 +8,9 @@ class ApiService {
   Future<Map<String, dynamic>> fetchData() async {
     try {
       final http.Response response = await http.get(Uri.parse(_baseUrl));
+      print(jsonDecode(response.body)[0]);
       if (response.statusCode == 200) {
-        return jsonDecode(response.body[0]);
+        return jsonDecode(response.body)[0];
       } else {
         throw Exception('Falha ao carregar os dados da API');
       }
