@@ -1,15 +1,19 @@
+import 'dart:math';
+
 import 'package:atmos_app/presentation/resources/app_resources.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class LineChartSample2 extends StatefulWidget {
-  const LineChartSample2({super.key});
+  final double actualValue;
+  const LineChartSample2({super.key, required this.actualValue});
 
   @override
   State<LineChartSample2> createState() => _LineChartSample2State();
 }
 
 class _LineChartSample2State extends State<LineChartSample2> {
+  double get actualValue => widget.actualValue;
   List<Color> gradientColors = [
     AppColors.contentColorWhite,
     AppColors.contentColorGreen,
@@ -93,19 +97,19 @@ class _LineChartSample2State extends State<LineChartSample2> {
       minX: 0,
       maxX: 8,
       minY: 0,
-      maxY: 10,
+      maxY: actualValue,
       lineBarsData: [
         LineChartBarData(
-          spots: const [
-            FlSpot(0, 4),
-            FlSpot(1, 6),
-            FlSpot(2, 3),
-            FlSpot(3, 7),
-            FlSpot(4, 9),
-            FlSpot(5, 3),
-            FlSpot(6, 7),
-            FlSpot(7, 10),
-            FlSpot(8, 6),
+          spots: [
+            FlSpot(0, Random().nextInt(actualValue.toInt() - 1).toDouble()),
+            FlSpot(1, Random().nextInt(actualValue.toInt() - 1).toDouble()),
+            FlSpot(2, Random().nextInt(actualValue.toInt() - 1).toDouble()),
+            FlSpot(3, Random().nextInt(actualValue.toInt() - 1).toDouble()),
+            FlSpot(4, Random().nextInt(actualValue.toInt() - 1).toDouble()),
+            FlSpot(5, Random().nextInt(actualValue.toInt() - 1).toDouble()),
+            FlSpot(6, Random().nextInt(actualValue.toInt() - 1).toDouble()),
+            FlSpot(7, Random().nextInt(actualValue.toInt() - 1).toDouble()),
+            FlSpot(8, actualValue.toDouble()),
           ],
           isCurved: true,
           gradient: LinearGradient(colors: gradientColors),

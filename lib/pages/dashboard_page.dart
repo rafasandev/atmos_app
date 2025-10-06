@@ -82,7 +82,9 @@ class DashboardPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          LineChartSample2(),
+                          LineChartSample2(
+                            actualValue: data.averages.O3_Avg_ug_m3,
+                          ),
                         ],
                       ),
                     ),
@@ -132,7 +134,9 @@ class DashboardPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          LineChartSample2(),
+                          LineChartSample2(
+                            actualValue: data.averages.SO2_Avg_ug_m3,
+                          ),
                         ],
                       ),
                     ),
@@ -182,7 +186,9 @@ class DashboardPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          LineChartSample2(),
+                          LineChartSample2(
+                            actualValue: data.averages.NO2_Avg_ug_m3,
+                          ),
                         ],
                       ),
                     ),
