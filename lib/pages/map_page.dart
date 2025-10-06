@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
+import 'package:atmos_app/models/weather_item.dart';
 import 'package:flutter/material.dart';
 
 class MapPage extends StatelessWidget {
-  final Future<Map<String, dynamic>> dadosDaApi;
+  final Future<WeatherItem> dadosDaApi;
 
   const MapPage({super.key, required this.dadosDaApi});
 
